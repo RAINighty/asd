@@ -1,0 +1,53 @@
+#config.yaml配置文件示例
+user: # 在填了cookies的情况下优先使用cookies上传，如需使用用户名密码上传请注释掉cookies
+    cookies:
+        SESSDATA: 83f772be%2C1671983014%2C5553d%2A61
+        bili_jct: c3414e88806a0fccd9bb6146a7584125
+        DedeUserID__ckMd5: 6042c2092081b365
+        DedeUserID: 123856388	
+    	   access_token: f776cf7b9adfb12ae17a2ed44c8a5b31
+#    account:
+#        username: your usrname
+#        password: your password
+#    app_key: bca7e84c2d947ac6 # 若账号密码方式无法登录可尝试更改此值
+#    appsec: 60698ba2f68e01ce44738920a0ffe768 # 值可以参考 https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/other/API_auth.md
+ 
+# b站上传线路选择，默认为自动模式，目前可手动切换为bda2, kodo, ws, qn
+lines: kodo
+# b站提交接口，默认自动选择，可选web，client
+#submit_api: client
+# 单文件并发上传数，未达到带宽上限时增大此值可提高上传速度
+threads: 5
+# 录像单文件大小限制，单位Byte，超过此大小分段下载
+file_size: 20000000000
+# 录像单文件时间限制，格式'00:00:00'（时分秒），超过此大小分段下载，如需使用大小分段请注释此字段
+#segment_time: '00:50:00'
+#douyucdn: tct-h5
+# 如遇到斗鱼录制卡顿可以尝试切换线路，tct-h5（备用线路5），ali-h5（备用线路6），akm-h5（主线路1）
+#huyacdn: AL
+# 如遇到虎牙录制卡顿可以尝试切换线路，AL（阿里），BD（百度），TX（腾讯）
+ 
+streamers:
+    q3录播: # 最小配置示例
+        url:
+            - https://live.bilibili.com/31494
+        title: "{title}————特别中二的q3君%Y.%m.%d直播记录" # 自定义标题的时间格式
+        tid: 21 # 投稿分区码,174为生活，其他分区
+        copyright: 1 # 1为自制
+        cover_path: /cover/up.jpg #设置视频封面
+        description: |- # 支持strftime, {title}占位符。 希望你可以保留软件出处
+         q3录播组，错过直播的可以来看录播。
+	    q3直播间：http://live.bilibili.com/31494
+	    q3个人空间：https://space.bilibili.com/8937568
+	    q3直播通知群：577250616
+	    如果出现音画不同步、卡顿、无画面等问题请私信录播组
+	    部分录播有AI字幕生成，可自行启用
+         Powered By biliup - Github: https://github.com/ForgQi/biliup
+        tags:
+            - 实况攻略
+            - 游戏实况
+            - 特别中二的q3君
+            - 直播录像
+            - q3录播
+            - q3
+        format: mp4 # 视频保存格式
